@@ -42,3 +42,5 @@ const Pager = (props) => {
         </div>
     )
 }
+
+export default Pager
