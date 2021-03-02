@@ -27,7 +27,7 @@ published: 2021-03-01
 
 2 日間、(1 日目は朝の 6 時まで...)やりきり、なんとか動くものを完成させることができました！！！<br>
 完成した作品の全体図がこちらです！<br>
-![memoChat](./img/memoChat.png)
+![memoChat](./static/img/memoChat.png)
 
 少し作品について振り返ります。
 
