@@ -28,7 +28,7 @@ published: 2021-03-01
 2 日間、(1 日目は朝の 6 時まで...)やりきり、なんとか動くものを完成させることができました！！！<br>
 完成した作品には下のリンクから飛べます！<br>
 
-https://guarded-eyrie-48747.herokuapp.com/
+[memoChat]https://guarded-eyrie-48747.herokuapp.com/
 
 少し作品について振り返ります。
 
