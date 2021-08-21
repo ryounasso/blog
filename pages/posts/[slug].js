@@ -1,55 +1,63 @@
-import fs from "fs"
-import path from "path"
+import fs from "fs";
+import path from "path";
 
-import Layout from "../../components/Layout"
-import { listContentFiles, readContentFile } from "../../lib/content-loader"
+import Layout from "../../components/Layout";
+import { listContentFiles, readContentFile } from "../../lib/content-loader";
+
+import Head from "next/head";
+
+const headers = { "X-API-KEY": process.env.CMS_API_KEY };
 
 export default function Post(params) {
-    return (
-        <Layout title={params.title}>
-            <div className="post-meta">
-                <span>{params.published}</span>
-            </div>
-            <div className="post-body"
-                dangerouslySetInnerHTML={{ __html: params.content }}
-            />
-        </Layout>
-    )
+  return (
+    <>
+      <Head>
+        <title>{params.title}</title>
+        <meta property="og:image" content={props.ogImageUrl} />
+      </Head>
+      <Layout title={params.title}>
+        <div className="post-meta">
+          <span>{params.published}</span>
+        </div>
+        <div
+          className="post-body"
+          dangerouslySetInnerHTML={{ __html: params.content }}
+        />
+      </Layout>
+    </>
+  );
 }
 
 // ページコンポーネントで使用する値を用意する
 
 export async function getStaticProps({ params }) {
-    const content = await readContentFile({ fs, slug: params.slug })
+  const content = await readContentFile({ fs, slug: params.slug });
+  const blogPostUrl = [process.env.CMS_API_URL, params.id].join("/");
+  const response = await fetch(blogPostUrl, { headers });
+  const { title } = await response.json();
+  const baseUrl = {
+    production: "https://tdkn.dev",
+    development: "https://localhost:3000",
+  }[process.env.NODE_ENV];
 
-    return {
-        props: {
-            ...content
-        }
-    }
+  return {
+    props: {
+      ...content,
+      ogImageUrl: `${baseUrl}/api/ogp?title=${title}`,
+    },
+  };
 }
 
 // 有効なURLパラメータを全件返す
 
 export async function getStaticPaths() {
-    const paths = listContentFiles({ fs })
-    .map((filename) => ({
-        params: {
-            slug: path.parse(filename).name,
-        }
-    }))
+  const paths = listContentFiles({ fs }).map((filename) => ({
+    params: {
+      slug: path.parse(filename).name,
+    },
+  }));
+  const response = await fetch(process.env.CMS_API_URL, { headers });
+  const { contents: posts } = await response.json();
 
-    return { paths, fallback: false }
+  return { paths, fallback: false };
 }
-
-// async function readContentFile({ fs, slug }) {
-//     return {
-//         title: "竹取物語",
-//         published: "2020/07/23",
-//         content: "今は昔竹取翁と云ふものありけり。野山に混じりて、竹を取りつつ、"
-//     }
-// }
-
-// function listContentFiles({ fs }) {
-//     return ["taketori.md"]
-// }
