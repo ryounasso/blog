@@ -21,7 +21,7 @@ export default function Post(params) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:image"
-          content="https://og-image-ryounasso.vercel.app/%E3%82%B5%E3%82%A4%E3%83%9C%E3%82%A6%E3%82%BA%E3%81%95%E3%82%93%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%83%E3%83%97%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%EF%BC%81.png?theme=dark&md=1&fontSize=100px"
+          content={`https://og-image-ryounasso.vercel.app/{params.title}.png?theme=dark&md=1&fontSize=100px`}
         />
         <meta name="twitter:title" content={params.title} />
       </Head>
