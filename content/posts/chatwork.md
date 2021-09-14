@@ -1,5 +1,5 @@
 ---
-title: Chatworkさんのインターンシップに参加してきました！！
+title: Chatworkさんのインターンシップに参加しました！！
 published: 2021-09-11
 ---
 
