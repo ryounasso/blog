@@ -1,92 +1,45 @@
-import Head from "next/head"
-import Link from "next/link"
+import Head from "next/head";
+import Link from "next/link";
 
 const Layout = (props) => {
-    const { title, children } = props
-    const siteTitle = "ryounasso blog"
+  const { title, children } = props;
+  const siteTitle = "ryounasso blog";
 
-    return (
-        <div className="page">
-            <Head>
-                <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+  return (
+    <div className="container mx-auto max-w-xl min-h-screen prose sm:prose-sm prose-headings:text-[#333333]">
+      <Head>
+        <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-            <header>
-                <h1 className="site-title">
-                    <Link href="/">
-                        <a>{siteTitle}</a>
-                    </Link>
-                </h1>
-            </header>
+      <header>
+        <div className="flex justify-center items-center relative">
+          <h1 className="text-center">
+            <Link href="/">
+              <a className="font-bold text-lg md:text-2xl block pt-3 mb-3">
+                {siteTitle}
+              </a>
+            </Link>
+          </h1>
+          <input
+            type="checkbox"
+            className="toggle absolute right-1 bg-white"
+          ></input>
+        </div>
+      </header>
 
-            <main>
-                {title ? <h1 className="page-title">{title}</h1> : ``}
-                <div className="page-main">
-                    {children}
-                </div>
-            </main>
+      <main>
+        <div>
+          {title ? <h1 className="text-lg md:text-2xl">{title}</h1> : ``}
+          <div>{children}</div>
+        </div>
+      </main>
 
-            <footer>
-                &copy; {siteTitle}
-            </footer>
+      <footer className="font-[16] md:font-[18] text-center">
+        &copy; {siteTitle}
+      </footer>
+    </div>
+  );
+};
 
-            <style jsx>{`
-                .page {
-                    padding: 2em 1em;
-                    max-width: 800px;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-
-                header {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 0 0 4em;
-                }
-
-                .site-title a {
-                    color: inherit;
-                    text-decoration: none;
-                }
-
-                footer {
-                    margin-top: 4em;
-                    padding-top: 2em;
-                    padding-bottom: 2em;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-            `}</style>
-
-            <style jsx global>{`
-                html,
-                body {
-                    padding: 0;
-                    margin: 0;
-                    font-family: 'Noto Sans JP', -apple-system, "Segoe UI", "Helvetica Neue",
-                    "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
-                    color: #222;
-                }
-
-                img,
-                iframe {
-                    max-eidth: 100%;
-                }
-
-                h1, h2, h3, h4, h5, h6 {
-                    fontfamily: Montserrat, -apple-system, "Segoe UI", "Helvetica Neue",
-                    "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
-                }
-
-                * {
-                    box-sizing: border-box;
-                }
-            `}</style>
-        </div >
-    )
-}
-
-export default Layout
+export default Layout;
