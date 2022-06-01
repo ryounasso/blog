@@ -15,7 +15,7 @@ export default function Home(props) {
       {posts.map((post) => (
         <div
           key={post.slug}
-          className="p-6 rounded-lg hover:bg-[#2B5FEC] hover:text-white max-w-xl m-6 shadow-neumorphism"
+          className="p-6 rounded-lg hover:bg-[#2B5FEC] prose hover:prose-a:text-white max-w-xl m-6 shadow-neumorphism"
         >
           <h2>
             <Link href="/posts/[id]" as={`/posts/${post.slug}`}>

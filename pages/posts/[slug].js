@@ -28,7 +28,7 @@ export default function Post(params) {
           <span>{params.published}</span>
         </div>
         <div
-          className="post-body prose sm:prose-sm p-4 text-[#333333] prose-headings:text-[#333333] marker:prose-li:text-[#333333]"
+          className="post-body prose prose-sm  p-4 text-[#333333] prose-headings:text-[#333333] marker:prose-li:text-[#333333] prose-em:text-[#333333]"
           dangerouslySetInnerHTML={{ __html: params.content }}
         />
       </Layout>

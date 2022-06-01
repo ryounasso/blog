@@ -6,7 +6,7 @@ const Layout = (props) => {
   const siteTitle = "ryounasso blog";
 
   return (
-    <div className="container mx-auto max-w-xl min-h-screen prose sm:prose-sm prose-headings:text-[#333333]">
+    <div className="container mx-auto max-w-xl min-h-screen prose sm:prose-sm prose-headings:text-[#333333] prose-a:text-[#333333] prose-a:no-underline">
       <Head>
         <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -16,7 +16,7 @@ const Layout = (props) => {
         <div className="flex justify-center items-center relative">
           <h1 className="text-center">
             <Link href="/">
-              <a className="font-bold text-lg md:text-2xl block pt-3 mb-3">
+              <a className="font-bold text-lg md:text-2xl block pt-3 mb-3 prose">
                 {siteTitle}
               </a>
             </Link>
@@ -35,7 +35,7 @@ const Layout = (props) => {
         </div>
       </main>
 
-      <footer className="font-[16] md:font-[18] text-center">
+      <footer className="font-[16] md:font-[18] text-center text-[#333333]">
         &copy; {siteTitle}
       </footer>
     </div>
