@@ -30,7 +30,7 @@ const Layout = (props) => {
 
       <main>
         <div>
-          {title ? <h1 className="text-lg md:text-2xl">{title}</h1> : ``}
+          {title ? <h1 className="text-lg md:text-lg">{title}</h1> : ``}
           <div>{children}</div>
         </div>
       </main>
