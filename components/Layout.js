@@ -6,7 +6,7 @@ const Layout = (props) => {
   const siteTitle = "ryounasso blog";
 
   return (
-    <div className="container mx-auto max-w-xl min-h-screen prose sm:prose-sm prose-headings:text-[#333333] prose-a:text-[#333333] prose-a:no-underline">
+    <div className="container p-4 mx-auto max-w-xl min-h-screen prose sm:prose-sm prose-headings:text-[#333333] prose-a:text-[#333333] prose-a:no-underline prose-strong:text-[#333333]">
       <Head>
         <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
