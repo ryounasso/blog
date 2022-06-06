@@ -10,6 +10,12 @@ const Layout = (props) => {
       <Head>
         <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
+        <script
+          async
+          defer
+          data-website-id="e19c1f60-17dd-4ea1-bbd0-2e921901c170"
+          src="https://ryounasso-umami.vercel.app/umami.js"
+        ></script>
       </Head>
 
       <header>
