@@ -15,11 +15,13 @@ export default function Archive(props) {
       {posts.map((post) => (
         <div
           key={post.slug}
-          className="p-6 rounded-lg hover:bg-[#2B5FEC] prose hover:prose-a:text-white my-6 max-w-xl shadow-neumorphism"
+          className="p-6 rounded-lg hover:bg-[#2B5FEC] prose hover:prose-a:text-white my-6 max-w-xl shadow-neumorphism hover:shadow-blueNeumorphism group"
         >
           <h2>
             <Link href="/posts/[id]" as={`/posts/${post.slug}`}>
-              <a className="text-sm md:text-lg">{post.title}</a>
+              <a className="text-sm md:text-lg group-hover:text-white">
+                {post.title}
+              </a>
             </Link>
           </h2>
           <div>
