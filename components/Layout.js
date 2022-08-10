@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { Profile } from "./Profile";
 
 const Layout = (props) => {
   const { title, children } = props;
@@ -35,11 +36,13 @@ const Layout = (props) => {
       </header>
 
       <main>
-        <div>
+        <div className="mb-10">
           {title ? <h1 className="text-lg md:text-lg">{title}</h1> : ``}
           <div>{children}</div>
         </div>
+        <Profile />
       </main>
+      <div className="mt-8" />
 
       <footer className="font-[16] md:font-[18] text-center text-[#333333]">
         &copy; {siteTitle}
