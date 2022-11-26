@@ -41,12 +41,8 @@ export default function Archive(props) {
       />
 
       <style jsx>{`
-        .post-teaser {
-          margin-bottom: 2em;
-        }
-
-        .post-teaser h2 a {
-          text-decoration: none;
+        div:hover {
+          @apply transform duration-1000 scale-150;
         }
       `}</style>
     </Layout>
