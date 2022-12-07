@@ -18,7 +18,7 @@ export default function Archive(props) {
           className="p-6 rounded-lg hover:bg-[#2B5FEC] prose hover:prose-a:text-white my-6 max-w-xl shadow-neumorphism hover:shadow-blueNeumorphism group"
         >
           <h2>
-            <Link href="/posts/[id]" as={`/posts/${post.slug}`}>
+            <Link href="/posts/[id]" as={`/posts/${post.slug}`} legacyBehavior>
               <a className="text-sm md:text-lg group-hover:text-white">
                 {post.title}
               </a>

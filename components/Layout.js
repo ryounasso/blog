@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { Profile } from "./Profile";
+import Script from "next/script";
 
 const Layout = (props) => {
   const { title, children } = props;
@@ -11,21 +12,22 @@ const Layout = (props) => {
       <Head>
         <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
-        <script
+        <Script
           async
           defer
-          data-website-id="e19c1f60-17dd-4ea1-bbd0-2e921901c170"
+          dataWebsiteId="e19c1f60-17dd-4ea1-bbd0-2e921901c170"
           src="https://ryounasso-umami.vercel.app/umami.js"
-        ></script>
+        />
       </Head>
 
       <header>
         <div className="flex justify-center items-center relative">
           <h1 className="text-center">
-            <Link href="/">
-              <a className="font-bold text-lg md:text-2xl block pt-3 mb-3 prose">
-                {siteTitle}
-              </a>
+            <Link
+              href="/"
+              className="font-bold text-lg md:text-2xl block pt-3 mb-3 prose"
+            >
+              {siteTitle}
             </Link>
           </h1>
           <input

@@ -18,10 +18,12 @@ export default function Home(props) {
           className="p-6 rounded-lg hover:bg-[#2B5FEC] prose hover:prose-a:text-white my-6 max-w-xl shadow-neumorphism hover:shadow-blueNeumorphism group"
         >
           <h2>
-            <Link href="/posts/[id]" as={`/posts/${post.slug}`}>
-              <a className="text-sm md:text-lg group-hover:text-white">
-                {post.title}
-              </a>
+            <Link
+              href="/posts/[id]"
+              as={`/posts/${post.slug}`}
+              className="text-sm md:text-lg group-hover:text-white"
+            >
+              {post.title}
             </Link>
           </h2>
           <div>
@@ -34,8 +36,12 @@ export default function Home(props) {
 
       {hasArchive ? (
         <div className="text-right mt-8">
-          <Link href="/archive/[page]" as="/archive/1">
-            <a className="text-xs md:text-sm">アーカイブ</a>
+          <Link
+            href="/archive/[page]"
+            as="/archive/1"
+            className="text-xs md:text-sm"
+          >
+            アーカイブ
           </Link>
         </div>
       ) : (

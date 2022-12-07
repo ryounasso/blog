@@ -24,11 +24,13 @@ export const Profile = () => {
           I am a graduate student.
         </p>
         <div className="flex flex-col">
-          <Link href="https://ryounasso-portfolio.vercel.app/">
-            <a className="text-sm md:text-lg w-max">portfolio page</a>
+          <Link
+            href="https://ryounasso-portfolio.vercel.app/"
+            className="text-sm md:text-lg w-max">
+            portfolio page
           </Link>
-          <Link href="https://twitter.com/ryounasso">
-            <a className="text-sm md:text-lg w-max">twitter</a>
+          <Link href="https://twitter.com/ryounasso" className="text-sm md:text-lg w-max">
+            twitter
           </Link>
         </div>
       </div>

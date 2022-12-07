@@ -13,7 +13,7 @@ const Pager = (props) => {
         <div className="pager">
             <span className="pager-item">
                 {prevPage ? (
-                    <Link href={href} as={asCallback(prevPage)}>
+                    <Link href={href} as={asCallback(prevPage)} legacyBehavior>
                         <a>{prevPage}</a>
                     </Link>
                 ) : ``}
@@ -21,7 +21,7 @@ const Pager = (props) => {
             <span className="pager-item">{page}</span>
             <span className="pager-item">
                 {nextPage ? (
-                    <Link href={href} as={asCallback(nextPage)}>
+                    <Link href={href} as={asCallback(nextPage)} legacyBehavior>
                         <a>{nextPage}</a>
                     </Link>
                 ) : ``}
@@ -40,7 +40,7 @@ const Pager = (props) => {
             }
             `}</style>
         </div>
-    )
+    );
 }
 
 export default Pager
