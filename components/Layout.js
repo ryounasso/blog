@@ -15,8 +15,8 @@ const Layout = (props) => {
         <Script
           async
           defer
-          dataWebsiteId="e19c1f60-17dd-4ea1-bbd0-2e921901c170"
-          src="https://ryounasso-umami.vercel.app/umami.js"
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+          src={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL}
         />
       </Head>
 
